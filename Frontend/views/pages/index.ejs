@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="main-content container">
+      <h1 class="section-title">Catálogo de Productos</h1>
+      <section class="catalogo-grid" aria-label="Catálogo de productos">
+        <% if (productosEncontrados && productosEncontrados.length > 0) { %> <%
+        productosEncontrados.forEach(producto => { %>
+        <article
+          class="tarjeta-producto"
+          tabindex="0"
+          aria-label="Producto <%= producto.nombre %>"
+        >
+          <img
+            src="<%= producto.imagen %>"
+            alt="Imagen de <%= producto.nombre %>"
+            class="producto-img"
+            loading="lazy"
+          />
+          <div class="producto-info">
+            <h2 class="producto-titulo"><%= producto.nombre %></h2>
+            <p class="producto-descripcion"><%= producto.descripcion %></p>
+            <p class="producto-precio">
+              Precio: <span>$<%= producto.precio %></span>
+            </p>
+            <div class="producto-acciones">
+              <button
+                class="btn btn-carrito"
+                aria-label="Añadir <%= producto.nombre %> al carrito"
+              >
+                Añadir al carrito
+              </button>
+              <button
+                class="btn btn-comprar"
+                aria-label="Comprar <%= producto.nombre %> ahora"
+              >
+                Comprar ahora
+              </button>
+            </div>
+          </div>
+        </article>
+        <% }) %> <% } else { %>
+        <p class="mensaje-vacio">No hay productos disponibles.</p>
+        <% } %>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

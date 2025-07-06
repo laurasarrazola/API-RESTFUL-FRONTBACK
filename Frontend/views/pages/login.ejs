@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="login-main">
+      <section class="login-card" tabindex="-1">
+        <h1 class="login-title">Iniciar Sesión</h1>
+        <% if (typeof error === 'string' && error) { %>
+        <div class="login-error"><%= error %></div>
+        <% } %>
+        <form
+          action="/login"
+          method="post"
+          class="login-form"
+          autocomplete="off"
+        >
+          <div class="login-field">
+            <label for="correo" class="login-label">Correo electrónico</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              class="login-input"
+              required
+              autocomplete="username"
+            />
+          </div>
+          <div class="login-field">
+            <label for="password" class="login-label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="login-input"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+          <button type="submit" class="btn-login">Iniciar sesión</button>
+          <p class="credenciales-demo" aria-live="polite">
+            <span aria-hidden="true" style="font-size: 1em">ℹ️</span>
+            correo: laura@ejemplo.com<br />
+            contraseña: 12345
+          </p>
+        </form>
+        <a href="#" class="login-link">¿Olvidaste tu contraseña?</a>
+        <div class="login-divider"><span>O inicia con</span></div>
+        <div class="login-social">
+          <button
+            class="btn-social-icon gmail"
+            type="button"
+            aria-label="Iniciar con Gmail"
+          >
+            <i class="bi bi-google icon-social" aria-hidden="true"></i>
+          </button>
+          <button
+            class="btn-social-icon github"
+            type="button"
+            aria-label="Iniciar con GitHub"
+          >
+            <i class="bi bi-github icon-social" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
