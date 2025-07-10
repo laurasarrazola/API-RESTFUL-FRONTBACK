@@ -17,8 +17,9 @@ exports.consultarProductos = async (req, res) => {
     // Buscar todos los productos en la base de datos
     let productosEncontrados = await modeloProducto.find();
     if (productosEncontrados && productosEncontrados.length > 0) {
-      // Si hay productos, renderiza la vista y los pasa como variable
-      res.render("pages/index", { productosEncontrados });
+      // Si hay productos, renderiza la vista index.ejs
+      res.status(200).json(productosEncontrados);
+      /*res.render("pages/index", { productosEncontrados });*/
     } else {
       // Si no hay productos, responde con un mensaje
       res.status(404).json({ mensaje: "No se encontraron productos" });

@@ -1,0 +1,511 @@
+/* --- Reset y variables --- */
+:root {
+  --color-primario: #2a5298;
+  --color-secundario: #1e3c72;
+  --color-acento: #f9a825;
+  --color-fondo: #f4f6fb;
+  --color-texto: #222;
+  --color-blanco: #fff;
+  --color-footer: #222b3a;
+  --espaciado: 1.5rem;
+  --radio-borde: 0.75rem;
+  --sombra: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --fuente-principal: "Segoe UI", "Roboto", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Tipografía y base --- */
+body {
+  font-family: var(--fuente-principal);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.main-header {
+  background: linear-gradient(
+    90deg,
+    var(--color-primario),
+    var(--color-secundario)
+  );
+  color: var(--color-blanco);
+  box-shadow: var(--sombra);
+  padding: 0.5rem 0;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-blanco);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+  transition: background 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: var(--color-acento);
+  color: var(--color-footer);
+  outline: none;
+}
+
+/* --- Main Content --- */
+.main-content {
+  padding: var(--espaciado) 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--espaciado);
+  color: var(--color-primario);
+  text-align: center;
+}
+
+/* --- About Section --- */
+.about-section {
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.about-list {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+  list-style: disc inside;
+}
+
+/* --- Catálogo y tarjetas --- */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tarjeta-producto {
+  background: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.tarjeta-producto:focus,
+.tarjeta-producto:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.15);
+}
+
+.producto-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #e0e7ef;
+}
+
+.producto-info {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producto-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-secundario);
+}
+
+.producto-descripcion {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+.producto-precio {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-acento);
+  margin-bottom: 1rem;
+}
+
+.producto-precio span {
+  font-weight: bold;
+}
+
+.producto-acciones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* --- Botones --- */
+.btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+.btn-carrito {
+  background: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.btn-carrito:hover,
+.btn-carrito:focus {
+  background: var(--color-acento);
+  color: var(--color-footer);
+}
+
+.btn-comprar {
+  background: var(--color-acento);
+  color: var(--color-footer);
+}
+
+.btn-comprar:hover,
+.btn-comprar:focus {
+  background: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+/* --- Mensaje vacío --- */
+.mensaje-vacio {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+/* --- Footer --- */
+.main-footer {
+  background: var(--color-footer);
+  color: var(--color-blanco);
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* === LOGIN FORM === */
+.login-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-fondo, #f5f7fa);
+  animation: login-fadein 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes login-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.login-card {
+  background: #fff;
+  box-shadow: 0 6px 32px 0 rgba(60, 60, 120, 0.1);
+  border-radius: 18px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.3rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.login-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7c3aed;
+}
+.login-input {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #22223b;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.login-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px #e9d5ff;
+}
+.btn-login {
+  margin-top: 0.5rem;
+  padding: 0.8rem 0;
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(124, 58, 237, 0.08);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.btn-login:hover,
+.btn-login:focus {
+  background: #5b21b6;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px 0 rgba(124, 58, 237, 0.13);
+}
+.login-link {
+  display: block;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  color: #7c3aed;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.login-link:hover,
+.login-link:focus {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+.login-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #b5b5c3;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  justify-content: center;
+}
+.login-divider span {
+  flex: 1;
+  border-bottom: 1px solid #e0e7ef;
+  margin: 0 0.7em;
+  line-height: 0.1em;
+}
+
+/* === SOCIAL BUTTONS === */
+.login-social {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  justify-content: center;
+}
+.btn-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.7em 1.2em;
+  background: #f1f5f9;
+  color: #22223b;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px 0 rgba(60, 60, 120, 0.07);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.btn-social .icon-social {
+  width: 1.3em;
+  height: 1.3em;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.3em; /* Asegura tamaño adecuado del ícono */
+  margin-right: 0.5em; /* Espacio entre ícono y texto */
+}
+.btn-social.gmail {
+  color: #ea4335;
+}
+.btn-social.github {
+  color: #22223b;
+}
+.btn-social:hover,
+.btn-social:focus {
+  background: #e0e7ef;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(56, 189, 248, 0.1);
+}
+
+/* === SOCIAL BUTTONS ICON ONLY (Bootstrap Icons) === */
+.login-social {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 8px 0 rgba(60, 60, 120, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.7rem;
+  padding: 0;
+  outline: none;
+}
+
+.btn-social-icon .icon-social {
+  font-size: 1.5em;
+  display: block;
+  margin: 0;
+}
+
+.btn-social-icon.gmail {
+  color: #ea4335;
+}
+
+.btn-social-icon.github {
+  color: #22223b;
+}
+
+.btn-social-icon:hover,
+.btn-social-icon:focus {
+  background: #e0e7ef;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px 0 rgba(56, 189, 248, 0.13);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+    max-width: 98vw;
+    border-radius: 12px;
+  }
+  .login-title {
+    font-size: 1.4rem;
+  }
+  .btn-social {
+    font-size: 0.98rem;
+    padding: 0.6em 0.7em;
+  }
+}
+
+/* === ACCESIBILIDAD === */
+.login-card:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* === LOGIN ERROR MESSAGE === */
+.login-error {
+  background: #ffe5e9;
+  color: #c62828;
+  border-radius: 10px;
+  padding: 0.7em 1em;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px 0 rgba(198, 40, 40, 0.07);
+  animation: login-fadein 0.5s;
+}
+
+/* === LOGIN: Mensaje de credenciales demo === */
+.credenciales-demo {
+  display: block;
+  margin: 0.5em 0 0.2em 0;
+  font-size: 0.93em;
+  color: #888da8;
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  user-select: text;
+  word-break: break-all;
+}
+.credenciales-demo span[aria-hidden="true"] {
+  margin-right: 0.3em;
+  vertical-align: middle;
+}

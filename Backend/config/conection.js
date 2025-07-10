@@ -1,4 +1,4 @@
-/**
+/*
  * Archivo de configuración de la conexión a MongoDB usando Mongoose.
  * Utiliza variables de entorno para mayor seguridad y flexibilidad.
  */

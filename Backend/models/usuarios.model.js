@@ -23,8 +23,21 @@ const SchemaUsuario = new mongoose.Schema(
       default: Date.now,
       max: Date.now,
     },
-  },
 
+    correo: {
+      type: String,
+      required: [true, "El correo es obligatorio"],
+      unique: true,
+      match: [/\S+@\S+\.\S+/, "El correo debe tener un formato válido"],
+    },
+
+    contrasena: {
+      type: String,
+      required: [true, "La contraseña es obligatoria"],
+      minLength: [6, "La contraseña debe tener al menos 6 caracteres"],
+    }
+  },
+  
   {
     versionKey: false,
   }
