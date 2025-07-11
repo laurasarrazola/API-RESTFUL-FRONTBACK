@@ -2,11 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Error del servidor</title>
+  <title>💥 Error 500 - ¡Oops!</title>
+  <link rel="stylesheet" href="/css/estilos.css" />
 </head>
-<body>
-  <h1>Error 500 - Error interno del servidor</h1>
-  <p><%= error %></p>
-  <a href="/">Volver al inicio</a>
+<body class="error-500">
+  <div class="error-container">
+    <h1 class="error-title">💥 Error 500 💥</h1>
+    <p class="error-message">¡Algo explotó en el servidor!</p>
+    <p class="error-detail">⚠️ <%= error %> ⚠️</p>
+    <img class="error-gif" src="https://media.giphy.com/media/fAnEC88LccN7a/giphy.gif" alt="GIF divertido del error" />
+    <a class="error-btn" href="/">🔄 Volver al inicio</a>
+  </div>
 </body>
 </html>
+

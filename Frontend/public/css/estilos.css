@@ -509,3 +509,146 @@ body {
   margin-right: 0.3em;
   vertical-align: middle;
 }
+
+
+/* ==== Estilos para página de Error 500 ==== */
+
+body.error-500 {
+  background-color: #ffe6e6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d8000c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.error-container {
+  padding: 2rem;
+  border: 3px dashed #d8000c;
+  border-radius: 20px;
+  background-color: #fff0f0;
+  box-shadow: 0 0 15px rgba(216, 0, 12, 0.3);
+}
+
+.error-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: shake 0.3s infinite;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.error-detail {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #990000;
+}
+
+.error-gif {
+  width: 300px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.error-btn {
+  padding: 10px 20px;
+  background-color: #d8000c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.error-btn:hover {
+  background-color: #a70000;
+}
+
+/* Animación divertida */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ==== Estilos para página de Error 404 ==== */
+
+body.error-404 {
+  background-color: #fff3e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e65100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.error-container {
+  padding: 2rem;
+  border: 3px dashed #ff9800;
+  border-radius: 20px;
+  background-color: #fff8e1;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.4);
+}
+
+.error-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.error-detail {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #bf360c;
+}
+
+.error-gif {
+  width: 300px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.error-btn {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.error-btn:hover {
+  background-color: #e65100;
+}
+
+/* Animación de temblor */
+@keyframes shake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0); }
+}
+

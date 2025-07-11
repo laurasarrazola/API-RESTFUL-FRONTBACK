@@ -1,27 +1,27 @@
-/*****************************************************
- *                 IMPORTAR MÓDULOS                  *
- *****************************************************/
+/*****************************************
+ *           IMPORTAR MÓDULOS            *
+ *****************************************/
 const express = require("express"); //crear el servidor web y manejar rutas HTTP
 const mongoose = require("mongoose"); //conectarse a MongoDB y manejar modelos de datos
 const morgan = require("morgan"); //registrar en consola las peticiones HTTP (útil para depurar)
 const dotenv = require("dotenv"); //Carga las variables de entorno desde el archivo .env
 const path = require("path"); //manejar rutas de archivos y directorios en el sistema de archivos
 
-/*****************************************************
- *           CARGA DE VARIABLES DE ENTORNO           *
- *****************************************************/
+/*****************************************
+ *     CARGA DE VARIABLES DE ENTORNO     *
+ *****************************************/
 dotenv.config();
 
-/*****************************************************
- *           IMPORTACIÓN DE CONTROLADORES            *
- *****************************************************/
+/*****************************************
+ *     IMPORTACIÓN DE CONTROLADORES      *
+ *****************************************/
 const clienteController = require("./controller/cliente.controller");
 /*const productoController = require("./controller/producto.controller");*/
-const usuarioController = require("./controller/usuario.controller");
+/*const usuarioController = require("./controller/usuario.controller");*/
 
-/*****************************************************
- *   INICIALIZAR EXPRESS Y CONFIGURACION DE PUERTO   *
- *****************************************************/
+/*****************************************
+ *INICIALIZAR EXPRESS Y CONFIGURAR PUERTO*
+ *****************************************/
 const app = express();
 // Configuración del motor de vistas EJS
 app.set("view engine", "ejs");
@@ -29,9 +29,9 @@ app.set("views", path.join(__dirname, "views"));
 
 const PORT = process.env.PORT || 3000;
 
-/*****************************************************
- *           CONFIGURACIÓN DE MIDDLEWARES            *
- *****************************************************/
+/*****************************************
+ *     CONFIGURACIÓN DE MIDDLEWARES      *
+ *****************************************/
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -58,18 +58,18 @@ app.use(express.urlencoded({ extended: false }));
  * El parámetro extended: false indica que solo acepta datos simples (no objetos anidados).            *
  *******************************************************************************************************/
 
-/*****************************************************
- *            MONTAJE DE RUTAS SEPARADAS            *
- *****************************************************/
+/*****************************************
+ *      MONTAJE DE RUTAS SEPARADAS       *
+ *****************************************/
 const productosRouter = require("./routes/productos");
 app.use("/", productosRouter);
 
 const usuarioRoutes = require("./routes/usuarios");
 app.use("/api", usuarioRoutes);
 
-/*****************************************************
- *               RUTAS GET DE LAS VISTAS             *
- *****************************************************/
+/*****************************************
+ *         RUTAS GET DE LAS VISTAS       *
+ *****************************************/
 //Redirige la ruta raíz "/" hacia la página de login
 app.get("/", (req, res) => {
   res.redirect("/login");
@@ -80,17 +80,14 @@ app.get("/about", (req, res) => {
   res.render("pages/about");
 });
 
-// Muestra el catálogo de productos usando un controlador externo
-/*app.get("/index", productoController.consultarProductos);*/
-
 // Muestra la página de login cuando se accede a "/login"
 app.get("/login", (req, res) => {
   res.render("pages/login");
 });
 
-/*****************************************************
- *                 RUTAS API RESTFUL                 *
- *****************************************************/
+/*****************************************
+ *           RUTAS API RESTFUL           *
+ *****************************************/
 // Rutas API RESTful para productos
 /*app.get("/api/products", productoController.consultarProductos);
 app.post("/api/products", productoController.insertarProductos);
@@ -103,11 +100,11 @@ app.post("/api/clientes", clienteController.insertarClientes);
 app.put("/api/clientes/:ref", clienteController.actualizarClientes);
 app.delete("/api/clientes/:id", clienteController.eliminarClientes);
 
-// Rutas API RESTful para usuarios
+/*// Rutas API RESTful para usuarios
 app.get("/api/usuarios", usuarioController.consultarUsuarios);
 app.post("/api/usuarios", usuarioController.insertarUsuarios);
 app.put("/api/usuarios/:ref", usuarioController.actualizarUsuarios);
-app.delete("/api/usuarios/:id", usuarioController.eliminarUsuarios);
+app.delete("/api/usuarios/:id", usuarioController.eliminarUsuarios);*/
 
 /*
 Esta forma asume que clienteController es un enrutador (express.Router()), no solo un objeto con funciones.
